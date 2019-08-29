@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title The shit
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui")
+        meta(name="apple-mobile-web-app-capable" content="yes")
+        meta(name="apple-mobile-web-app-status-bar-style" content="black")
+        meta(name="format-detection" content="telephone=no")
+        meta(name="msapplication-tap-highlight" content="no")
+        meta(name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height")
+        meta(name="theme-color", content="#ffffff")
+
+        meta(http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com * ws:; style-src 'self' 'unsafe-inline' data: blob:;media-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: content:;")
+        
+        //- should be the more secure version which does not work  
+        //- meta(http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-eval' 78.47.207.64 localhost 10.0.0.*")
+        include styles-include.pug
+        include scripts-include.pug
+    body.unselectable(onselectstart="return false;")
+        block body

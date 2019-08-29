@@ -1,0 +1,124 @@
+/*==============================================================================
+RESET
+==============================================================================*/
+@import 'stylepresets/reset.styl'
+
+/*==============================================================================
+FONTS
+==============================================================================*/
+@font-face
+   font-family Aurox_CRS
+   font-style normal
+   src url(fonts/Aurox_CRS.ttf)
+
+
+// @font-face
+//    font-family MuseoSans100
+//    font-style normal
+//    src url(fonts/MuseoSans-100.otf)
+// @font-face
+//    font-family MuseoSans100Italic
+//    font-style normal
+//    src url(fonts/MuseoSans-100Italic.otf)
+// @font-face
+//    font-family MuseoSans500
+//    font-style normal
+//    src url(fonts/MuseoSans-500.otf)
+// @font-face
+//    font-family MuseoSans500Italic
+//    font-style normal
+//    src url(fonts/MuseoSans-500Italic.otf)
+
+
+/*==============================================================================
+GLOBAL VARIABLES
+==============================================================================*/
+mainmenumodule-bottomline-height-vw-factor = 0.1133 /* = 17/150 */
+mainmenumodule-bottomline-height = (100vw * mainmenumodule-bottomline-height-vw-factor)
+
+navbarmodule-navbar-height-vw-factor = 0.1133 /* = 17/150*/
+navbarmodule-navbar-height = (100vw * navbarmodule-navbar-height-vw-factor)
+
+programcontrolsectionmodule-section-height-vw-factor = 0.4 // off the programcontrolsection
+programcontrolsectionmodule-section-height = (100vw * programcontrolsectionmodule-section-height-vw-factor)
+
+// tied togehter with animationTime in pagemodule.coffee
+pagemodule-intro-time = 0.7s
+
+control-elements-z-index-base = 200
+pages-z-index-base = 50
+
+/*==============================================================================
+GLOBAL MIXINS
+==============================================================================*/
+centered-background(src)
+    background-image url(src)
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+
+margin-content(margin)
+    width: 'calc(100% - ( %s * 2 ))' % margin
+    margin-left: margin
+    margin-right: margin
+
+
+
+/*==============================================================================
+GLOBAL STYLES
+==============================================================================*/
+body
+    width: 100%
+    height: 100vh
+    background-color:white
+    font-family "Aurox_CRS"
+
+h1, h2, h3, h4, h5, h6
+    font-family "Aurox_CRS"   
+
+input, textarea, select, button
+    font-family "Aurox_CRS"   
+
+
+.unselectable
+    -webkit-touch-callout none
+    -webkit-user-select none
+    user-select: none 
+
+.top-shadow
+    display none
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 23px
+
+.bottom-shadow
+    display none
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+    height 23px
+    
+.has-scroll-shadow-top
+    .top-shadow
+        display block
+
+.has-scroll-shadow-bottom
+    .bottom-shadow
+        display block
+
+.has-scroll-shadow-both
+    .top-shadow
+        display block
+    .bottom-shadow
+        display block
+
+// .smooth-scroll
+//     -webkit-overflow-scrolling: touch
+
+/*==============================================================================
+Including other components
+==============================================================================*/
+@import 'modules.styl'

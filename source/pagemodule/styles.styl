@@ -1,0 +1,101 @@
+/* = = = 
+Variables... beware! this will become blended with all other modules on the same level
+= = = */ 
+transitionduration = 2s
+
+/* = = = 
+pagemodule Specific Styles
+= = = */
+.page.untouched
+    display none
+.page
+    background-color rgba(10,200,100,0.5)
+    width: 100%
+    height: 100%
+    position fixed
+    top 0
+    left 0
+    -webkit-transform: translate(0,0)
+    transform: translate(0,0)
+    z-index: pages-z-index-base
+
+.page
+    h1 
+        font-weight: bold
+        font-size 30px
+        color grey 
+        position fixed
+        top 15px
+        right 15px
+
+.page.left-off
+    transform translateX(-102%) 
+    -webkit-transform translateX(-102%) 
+.page.right-off
+    transform translateX(102%) 
+    -webkit-transform translateX(102%) 
+.page.bottom-off
+    transform translateY(102%)
+    -webkit-transform translateY(102%)
+
+.page-content
+    height: 100%
+
+.page-content-scroll
+    height: 100%
+    overflow-y: scroll
+
+@keyframes leave-left 
+    from
+        transform translate(0,0)
+        -webkit-transform translate(0,0)
+    to
+        -webkit-transform translateX(-102%)
+        transform translateX(-102%)
+
+@keyframes leave-right
+    from
+        transform translate(0,0)
+        -webkit-transform translate(0,0)
+    to
+        -webkit-transform translateX(102%)
+        transform translateX(102%)
+
+@keyframes enter-left
+    from
+        -webkit-transform translateX(-102%)
+        transform translateX(-102%)
+    to
+        -webkit-transform translate(0,0)
+        transform translate(0,0)
+@keyframes enter-right
+    from
+        -webkit-transform translateX(102%)
+        transform translateX(102%)
+    to
+        transform translate(0,0)
+        -webkit-transform translate(0,0)
+@keyframes enter-upwards
+    from
+        -webkit-transform translateY(102%)
+        transform translateY(102%)
+    to
+        -webkit-transform translate(0,0)
+        transform translate(0,0)
+@keyframes leave-downwards
+    from
+        -webkit-transform translate(0,0)
+        transform translate(0,0)
+    to
+        -webkit-transform translateY(102%)
+        transform translateY(102%)
+@keyframes appear
+    from
+        opacity 0
+    to
+        opacity 1
+@keyframes disappear
+    from
+        opacity 1
+    to
+        opacity 0

@@ -1,0 +1,122 @@
+/* = = = 
+Variables... beware! this will become blended with all other modules on the same level
+= = = */
+
+/* opacity intro*/
+intro-animation-time = 2s
+
+color-gray = rgba(208, 219, 222, 1)
+color-dark-blue = rgba(22,73,89,1)
+color-light-blue = rgba(0, 166, 206, 1)
+settingspage-main-color = color-dark-blue
+primary-button-text-color = color-dark-blue
+secondary-button-text-color = color-light-blue
+button-background-color = color-gray
+title-text-color = color-gray
+
+/* general text measures */
+text-height-vw-factor = 0.0465 /* = 6/129 */
+text-height = (100vw * text-height-vw-factor)
+
+/* title measures */
+title-margin-left-vw-factor = 0.062/* = 8/129 */ 
+title-margin-left = (100vw * title-margin-left-vw-factor)
+title-margin-top-vw-factor = 0.0465/* = 6/129 */
+title-margin-top = (100vw * title-margin-top-vw-factor)
+
+/* button measures */
+button-width-vw-factor =  0.8294 /* = 1 - (2 * button-side-margin=0.0853) */
+button-width = (100vw * button-width-vw-factor)
+button-height-vw-factor = 0.093/* = 12/129 */
+button-height = (100vw * button-height-vw-factor)
+button-side-margin-vw-factor = 0.0853 /* = 11/129 */
+button-side-margin = (100vw * button-side-margin-vw-factor) 
+button-margin-top-vw-factor = 0.0155 /* = 2/129*/
+button-margin-top = (100vw * button-margin-top-vw-factor)
+button-inner-width-vw-factor = 0.32 /* = manually tested*/
+button-inner-width = (100vw * button-inner-width-vw-factor)
+button-text-side-margin-vw-factor = 0.031 /* = 4/129 */
+button-text-side-margin = (100vw * button-text-side-margin-vw-factor)
+button-border-radius-vw-factor = 0.02
+button-border-radius = (100vw * button-border-radius-vw-factor)
+
+inner-button-offset = (text-height * 0.11)
+
+/* = = = 
+settingspagemodule Specific Styles
+= = = */
+#settingspage.page
+    background-color settingspage-main-color    
+
+#settingspage.page.present
+    .button-list
+        transition opacity intro-animation-time linear pagemodule-intro-time
+        opacity 1
+
+#settingspagecontent
+    poition relative
+    h1
+        position absolute
+        left 0
+        top 0
+        font-size text-height
+        text-align left
+        color white
+        margin title-margin-top + navbarmodule-navbar-height title-margin-left
+    .button-list
+        display flex
+        flex-direction: column
+        justify-content center
+        height: 100%
+        opacity 0
+        .settingspage-button
+            position relative
+            display flex
+            align-items: center
+            font-size 0
+            background-color button-background-color
+            width button-width
+            height button-height
+            margin button-margin-top button-side-margin
+            padding  0
+            border-radius: button-border-radius
+            .button-inner-left
+                text-align left
+                color primary-button-text-color
+                margin-right auto
+                margin-left button-text-side-margin
+            .button-inner-right
+                text-align right
+                color secondary-button-text-color
+                margin-left auto
+                margin-right button-text-side-margin
+            .button-inner
+                font-size text-height
+                width button-inner-width
+                position: relative
+                top: inner-button-offset
+                // display inline-block
+                // vertical-align: middle
+                padding: 0
+            .button-inner-full
+                font-size text-height
+                position: relative
+                top: inner-button-offset
+                // display inline-block
+                // vertical-align: middle
+                text-align left
+                color primary-button-text-color
+                margin-right auto
+                margin-left button-text-side-margin
+                padding: 0                
+            select#settingspage-hidden-language-select
+                opacity 0
+                position absolute
+                height: inherit 
+                width: inherit
+                top: 0
+                left: 0
+                option
+                    opacity 1
+            button
+                pointer-events: none

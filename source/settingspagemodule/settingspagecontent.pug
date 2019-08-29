@@ -1,0 +1,26 @@
+#settingspagecontent.page-content
+    h1(language-key="settingsHeaderText")
+    .button-list
+        span.settingspage-button#settingspage-languagebutton
+            button.button-inner-left.button-inner(language-key="settingsLanguageButtonText")
+            button.button-inner-right.button-inner(language-key="settingsLanguageIndicator")
+            select#settingspage-hidden-language-select
+                option(value="de") Deutsch
+                option(value="en") English
+                option(value="es") Español
+                option(value="cn") 中文
+        button.settingspage-button#settingspage-bluetoothbutton
+            .button-inner-left.button-inner(language-key="settingsBluetoothButtonText")
+            #settingspage-bluetooth-indicator.button-inner-right.button-inner(language-key="settingsBluetoothNotConnected")
+        button.settingspage-button#settingspage-userdatabutton
+            .button-inner-full(language-key="settingsUserdataButtonText")
+        button.settingspage-button#settingspage-usercostumizationbutton
+            .button-inner-full(language-key="settingsUserCustomizationButtonText")
+        button.settingspage-button#settingspage-impressumbutton
+            .button-inner-full(language-key="settingsImpressumButtonText")
+        button.settingspage-button#settingspage-disclaimerbutton
+            .button-inner-full(language-key="settingsDisclaimerButtonText")
+        button.settingspage-button#settingspage-tutorialbutton
+            .button-inner-full(language-key="settingsTutorialButtonText")
+        button.settingspage-button#settingspage-logoutbutton
+            .button-inner-full(language-key="settingsLogoutButtonText")

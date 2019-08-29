@@ -1,0 +1,75 @@
+/* = = = 
+Variables... beware! this will become blended with all other modules on the same level
+= = = */
+// background = url("background-pattern.jpg") no-repeat center cover
+
+/* = = = 
+Module Specific Styles
+= = = */
+#cheapmenu-frame
+    position fixed
+    top 0
+    left 0
+    width 0
+    height 0
+    z-index: 250
+    
+    #cheapmenu-activation-button
+        position absolute
+        top 0
+        left 0
+        height 20px
+        width 20px
+        background-color red
+        z-index 252
+        
+    #cheapmenu-content-frame
+        position absolute
+        height: 100vh
+        width 70vw
+        padding-top 60px
+        padding-left 40px
+        padding-right 10px
+        top 0
+        left 0
+        transition transform 0.5s
+        transform translateX(-102%)
+        background black
+        box-sizing: border-box
+        border-right: alpha(grey, 0.5) solid 10px
+        z-index 251
+
+    #cheapmenu-content-frame.is-here
+        transform translateX(0)
+
+    button.cheapmenu-button
+        display block
+        box-shadow: none
+        color white
+        width 100%
+        text-align right
+        border none
+        outline none
+        background-color black
+        border-radius: 0
+        padding: 4px 6px
+        font-size: 18px
+        // position absolute
+        // top 50%
+        // left 50%
+        // transform translate(-50%, -50%)
+
+#click-catcher.active
+    opacity 0.8
+    z-index 199
+    pointer-events all
+#click-catcher
+    pointer-events none
+    transition: opacity 0.5s
+    position fixed
+    z-index -1
+    opacity 0
+    background-color grey
+    top 0
+    width 100%
+    height 100vh
