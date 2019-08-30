@@ -1,7 +1,7 @@
 ###################################################################
 # the Script
 ###################################################################
-import Modules from "./modules.js"
+import Modules from "./modules"
 
 global.allModules = Modules
 
